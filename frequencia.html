@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle de Frequência</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #b9f1e0;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #024e3f;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: none;
+      margin-right: 1rem;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #025242;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    table {
+      margin-top: 2rem;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #444;
+      text-align: center;
+    }
+
+    th {
+      color: #00b894;
+    }
+
+    .presente {
+      color: #55efc4;
+      font-weight: bold;
+    }
+
+    .faltou {
+      color: #d63031;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<iframe src="menu.html" width="200" align="right" frameborder="0"></iframe>
+  <h1>Sistema de Frequência</h1>
+
+  <input type="text" id="nomeAluno" placeholder="Nome do aluno">
+  <button onclick="registrarPresenca(true)">Presente</button>
+  <button onclick="registrarPresenca(false)">Faltou</button>
+
+  <table id="tabelaFrequencia">
+    <thead>
+      <tr>
+        <th>Aluno</th>
+        <th>Status</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function registrarPresenca(presente) {
+      const nome = document.getElementById('nomeAluno').value.trim();
+      if (!nome) {
+        alert("Digite o nome do aluno.");
+        return;
+      }
+
+      const tabela = document.querySelector('#tabelaFrequencia tbody');
+      const linha = document.createElement('tr');
+      const status = presente ? "Presente" : "Faltou";
+      const classe = presente ? "presente" : "faltou";
+
+      const data = new Date().toLocaleDateString();
+
+      linha.innerHTML = `
+        <td>${nome}</td>
+        <td class="${classe}">${status}</td>
+        <td>${data}</td>
+      `;
+      tabela.appendChild(linha);
+
+      document.getElementById('nomeAluno').value = '';
+    }
+  </script>
+
+</body>
+</html>
