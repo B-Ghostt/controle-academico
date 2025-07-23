@@ -10,16 +10,31 @@
     <h1>Cadastro de Alunos</h1>
 <iframe src="menu.html" width="200" align="right" frameborder="0"></iframe>
 <br>
-<br>
 <form>
-    Matricula: <input type="text" name="Matricula"> <br>
-    Nome: <input type="text" name="nome_aluno"> <br>
-    Data de Nascimento: <input type="text" name="nasc_aluno"> <br>
-    Sexo: <br>
-    <input type="radio" name="sexo" value="masculino">
-    Masculino <br>
-    <input type="radio" name="sexo" value="feminino">
-    Feminino <br>
+    <fieldset> <legend>Informações Pessoais</legend>
+        <table border="0,5">
+            <tr>
+    <td>Matricula:</td> <td> <input type="text" name="Matricula"> </td><br>
+    </tr>
+    <tr>
+        <td> Nome:</td>
+        <td><input type="text" name="nome_aluno"></td>
+    </tr>
+    <tr>
+        <td>Data de Nascimento:</td>
+        <td><input type="date" name="nasc_aluno" id=""></td>
+        <tr>
+            <td> Sexo:</td>
+            <td><input type="radio" name="sexo" value="masculino">
+    Masculino</td>
+        </tr>
+    <tr>
+        <td><input type="radio" name="sexo" value="feminino">
+    Feminino </td>
+    </tr>
+     
+    </table>
+    </fieldset>
 </form>
     
 <style>
