@@ -11,20 +11,25 @@
 <iframe src="menu.html" width="200" align="right" frameborder="0"></iframe>
 <br>
 <form>
+     <!--Fieldset - Cria um conjunto de dados com uma borda-->
     <fieldset> <legend>Informações Pessoais</legend>
         <table border="0,5">
             <tr>
-    <td>Matricula:</td> <td> <input type="text" name="Matricula"> </td><br>
+    <td>Matricula:</td> 
+     <!--placeholder - texto padrão que auxilia o usuário, indicando o que se espera naquele input
+        required - torna o preenchimento do input obrigatório-->
+    <td> <input type="text" name="Matricula" placeholder="ex: 123" required > </td><br>
     </tr>
     <tr>
         <td> Nome:</td>
-        <td><input type="text" name="nome_aluno"></td>
+        <td><input type="text" name="nome_aluno" placeholder="ex: nome" required></td>
     </tr>
     <tr>
         <td>Data de Nascimento:</td>
         <td><input type="date" name="nasc_aluno" id=""></td>
         <tr>
             <td> Sexo:</td>
+             <!-- Type="radio" - Formato circular, e só permite escolher uma opção do conjunto, precisa que todos tenham o mesmo nome-->
             <td><input type="radio" name="sexo" value="masculino">
     Masculino</td>
         </tr>
@@ -36,6 +41,8 @@
         </tr>
      
     </table>
+     <input type="reset" value="Limpar" />
+      <input type="submit" value="Salvar" />
     </fieldset>
 </form>
     
